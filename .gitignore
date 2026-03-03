@@ -1,0 +1,9 @@
+# Build output directory
+dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Gemini CLI configuration files
+.gemini/

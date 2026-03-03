@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Conference Schedule</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%; /* Adjusted width for better responsiveness */
+    max-width: 1200px; /* Max width for larger screens */
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77aaff 3px solid;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #eee;
+}
+
+.search-bar {
+    margin: 30px auto; /* Centered search bar */
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-bar input[type="text"] {
+    width: 80%; /* Responsive width */
+    max-width: 500px; /* Max width for input */
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.talk-schedule {
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.schedule-item {
+    border-bottom: 1px dashed #eee;
+    padding: 15px 0;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-item .time {
+    flex: 0 0 150px; /* Fixed width for time */
+    font-weight: bold;
+    color: #555;
+    margin-right: 20px;
+    font-size: 1.1em;
+    padding-top: 5px; /* Align with description text */
+    min-width: 120px; /* Ensure minimum width */
+}
+
+.schedule-item .details {
+    flex: 1;
+    min-width: 200px; /* Ensure details take up space */
+}
+
+.schedule-item h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1.3em;
+}
+
+.schedule-item .speaker {
+    font-style: italic;
+    color: #666;
+    margin: 0 0 5px 0;
+    font-size: 0.95em;
+}
+
+.schedule-item .categories {
+    font-size: 0.9em;
+    color: #888;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.schedule-item .description {
+    margin: 0;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.lunch-break {
+    background-color: #e9f7ff;
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.lunch-break h3 {
+    color: #007bff;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    .search-bar input[type="text"] {
+        width: 90%;
+    }
+    .schedule-item {
+        flex-direction: column; /* Stack time and details vertically */
+    }
+    .schedule-item .time {
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tech Summit 2026</h1>
+            <p>A full day of insightful talks and learning.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="talk-search" placeholder="Search talks by category...">
+        </div>
+
+        <div id="schedule-container">
+            <div class="talk-schedule">
+  <div class="schedule-item">
+    <div class="time">10:00 AM - 11:00 AM</div>
+    <div class="details">
+      <h3>Introduction to WebAssembly</h3>
+      <p class="speaker">Alice Wonderland</p>
+      <p class="categories">Categories: Web, Performance</p>
+      <p class="description">Explore the basics of WebAssembly and how it's revolutionizing web performance.</p>
+    </div>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time">11:10 AM - 12:10 PM</div>
+    <div class="details">
+      <h3>Modern JavaScript Frameworks Compared</h3>
+      <p class="speaker">Bob The Builder, Charlie Chaplin</p>
+      <p class="categories">Categories: JavaScript, Frontend</p>
+      <p class="description">A deep dive into React, Vue, and Angular, comparing their strengths and weaknesses.</p>
+    </div>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time">12:20 PM - 1:20 PM</div>
+    <div class="details">
+      <h3>Serverless Architectures with Node.js</h3>
+      <p class="speaker">David Copperfield</p>
+      <p class="categories">Categories: Node.js, Cloud, Architecture</p>
+      <p class="description">Learn how to build scalable serverless applications using Node.js and cloud services.</p>
+    </div>
+  </div>
+
+  <div class="schedule-item lunch-break">
+    <div class="time">1:30 PM - 2:30 PM</div>
+    <div class="details">
+      <h3>Lunch Break</h3>
+    </div>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time">2:40 PM - 3:40 PM</div>
+    <div class="details">
+      <h3>Advanced CSS Techniques</h3>
+      <p class="speaker">Eve Adams</p>
+      <p class="categories">Categories: CSS, Frontend, Design</p>
+      <p class="description">Master advanced CSS features like Grid, Flexbox, animations, and custom properties.</p>
+    </div>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time">3:50 PM - 4:50 PM</div>
+    <div class="details">
+      <h3>GraphQL vs. REST: Choosing the Right API</h3>
+      <p class="speaker">Frank Sinatra</p>
+      <p class="categories">Categories: API, Backend, Architecture</p>
+      <p class="description">Understand the differences between GraphQL and RESTful APIs and when to use each.</p>
+    </div>
+  </div>
+
+  <div class="schedule-item">
+    <div class="time">5:00 PM - 6:00 PM</div>
+    <div class="details">
+      <h3>Building Secure Web Applications</h3>
+      <p class="speaker">Grace Hopper, Alan Turing</p>
+      <p class="categories">Categories: Security, Backend, Web</p>
+      <p class="description">Key principles and best practices for developing secure web applications.</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('talk-search');
+    // Use a more specific selector to get only talk items, excluding lunch break for search filtering
+    const scheduleItems = document.querySelectorAll('.talk-schedule .schedule-item:not(.lunch-break)');
+    const categoriesElements = document.querySelectorAll('.talk-schedule .schedule-item:not(.lunch-break) .categories');
+
+    if (!searchInput || scheduleItems.length === 0 || categoriesElements.length === 0) {
+        console.warn("Could not find necessary elements for search functionality. Please check IDs and selectors.");
+        return; // Exit if essential elements are not found
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim(); // Trim whitespace
+
+        scheduleItems.forEach((item, index) => {
+            // Ensure we are referencing the correct category element for this item
+            // This assumes scheduleItems and categoriesElements are in the same order and correspond to each other
+            if (index < categoriesElements.length) {
+                const categoryText = categoriesElements[index].textContent.toLowerCase();
+                const categoriesArray = categoryText.replace('categories:', '').trim().split(',').map(cat => cat.trim());
+
+                // Check if any category matches the search term
+                const matches = categoriesArray.some(category => category.includes(searchTerm));
+
+                if (searchTerm === '' || matches) {
+                    item.style.display = 'flex'; // Show item
+                } else {
+                    item.style.display = 'none'; // Hide item
+                }
+            }
+        });
+    });
+});
+
+</script>
+    <script src="js/main.js"></script>
+</body>
+</html>
